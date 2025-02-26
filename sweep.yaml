@@ -1,0 +1,17 @@
+program: ./train_main.py
+method: bayes
+metric:
+  name: val_f1_score
+  goal: maximize
+parameters:
+  lr:
+    min: 0.000001
+    max: 0.001
+  weight_decay:
+    min: 0.000001
+    max: 0.001
+  random_state:
+    min: 0
+    max: 300
+  train_mini_batch:
+    values: [2, 4, 8, 16, 32]
