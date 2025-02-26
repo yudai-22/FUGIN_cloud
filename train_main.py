@@ -17,7 +17,7 @@ from training_sub import weights_init
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="PyTorch Implementation of SSD")
+    parser = argparse.ArgumentParser(description="PyTorch Implementation of CAE")
     parser.add_argument(
         "--training_validation_path", metavar="DIR", help="training_validation_path", default="/dataset/spitzer_data/"
     )
@@ -32,8 +32,8 @@ def parse_args():
     parser.add_argument("--lr", type=float, default=1e-4)
     parser.add_argument("--weight_decay", type=float, default=0.001)
     # option
-    parser.add_argument("--wandb_project", type=str, default="リングの選定")
-    parser.add_argument("--wandb_name", type=str, default="search_validation_size")
+    parser.add_argument("--wandb_project", type=str, default="demo")
+    parser.add_argument("--wandb_name", type=str, default="demo1")
 
     return parser.parse_args()
 
@@ -60,9 +60,6 @@ def main(args):
         shutil.rmtree(args.savedir_path)
     os.makedirs(args.savedir_path, exist_ok=True)
 
-    ############
-    ## logger ##
-    ############
     run = wandb.init(
         project=args.wandb_project,
         name=args.wandb_name,
