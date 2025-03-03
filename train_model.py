@@ -12,7 +12,8 @@ def train_model(model, criterion, optimizer, num_epochs, args, device, run):
 
     early_stopping = EarlyStopping(patience=15, verbose=True, path=args.savedir_path + "/model_parameter.pth")
 
-    data = np.load(args.training_validation_path)
+    # data = np.load(args.training_validation_path)
+    data = np.memmap(args.training_validation_path dtype=np.float32, mode="r", shape=(11676, 120, 112, 112))
     data = torch.from_numpy(data).float()
     label = [0] * len(data)
     train_data, val_data, train_labels, val_labels = train_test_split(
