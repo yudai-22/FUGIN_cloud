@@ -10,7 +10,7 @@ from training_sub import DataSet, EarlyStopping
 
 def train_model(model, criterion, optimizer, num_epochs, args, device, run):
 
-    early_stopping = EarlyStopping(patience=15, verbose=True, path=args.savedir + "/model_parameter.pth")
+    early_stopping = EarlyStopping(patience=15, verbose=True, path=args.savedir_path + "/model_parameter.pth")
 
     data = np.load(args.training_validation_path)
     data = torch.from_numpy(data).float()
