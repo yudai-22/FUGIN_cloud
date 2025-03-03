@@ -89,7 +89,7 @@ def main(args):
         "run": run,
     }
 
-    train_model(**train_model_params)
+    train_model.train_model(**train_model_params)
 
     artifact = wandb.Artifact("training_log", type="dir")
     artifact.add_dir(args.savedir_path)
