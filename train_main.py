@@ -80,7 +80,7 @@ def main(args):
     )
 
     train_model_params = {
-        "net": model,
+        "model": model,
         "criterion": nn.MSELoss(),
         "optimizer": optimizer,
         "num_epochs": args.num_epoch,
