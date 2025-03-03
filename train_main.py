@@ -66,7 +66,7 @@ def main(args):
         config={
             "learning_rate": args.lr,
             "weight_decay": args.weight_decay,
-            "fits_random_state": args.fits_random_state,
+            "fits_random_state": args.random_state,
             "train_mini_batch": args.train_mini_batch,
             "val_mini_batch": args.val_mini_batch,
         },
