@@ -74,6 +74,7 @@ def main(args):
 
     model = Conv3dAutoencoder()
     model.apply(weights_init)
+    model.to(device)
     wandb.watch(model, log_freq=100)
     optimizer = optim.AdamW(
         model.parameters(), lr=args.lr, betas=(0.9, 0.999), eps=1e-08, weight_decay=args.weight_decay, amsgrad=False
