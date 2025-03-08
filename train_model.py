@@ -21,7 +21,7 @@ def train_model(model, criterion, optimizer, num_epochs, args, device, run):
         data, label, test_size=0.2, random_state=42, stratify=label
     )
     val_data, test_data, val_labels, test_labels = train_test_split(
-        val_data, val_labels, test_size=0.25, random_state=42, stratify=train_labels
+        val_data, val_labels, test_size=0.25, random_state=42, stratify=val_labels
     )
     train_dataset = DataSet(train_data, train_labels)
     train_dataloader = DataLoader(train_dataset, batch_size=args.train_mini_batch, shuffle=True)
