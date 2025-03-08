@@ -1,10 +1,9 @@
 import torch.nn as nn
 
 
-class Conv3dAutoencoder(nn.Module, latent):
-    def __init__(self):
+class Conv3dAutoencoder(nn.Module):
+    def __init__(self, latent):
         super(Conv3dAutoencoder, self).__init__()
-        latent = 1000
 
         # Encoder
         self.encoder = nn.Sequential(
