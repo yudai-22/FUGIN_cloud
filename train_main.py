@@ -32,7 +32,7 @@ def parse_args():
     parser.add_argument("--lr", type=float, default=1e-4)
     parser.add_argument("--weight_decay", type=float, default=0.001)
     # 潜在変数
-    parser.add_argument("--latent_num", type=float, default=1000)
+    parser.add_argument("--latent_num", type=int, default=1000)
     # option
     parser.add_argument("--wandb_project", type=str, default="demo")
     parser.add_argument("--wandb_name", type=str, default="demo1")
