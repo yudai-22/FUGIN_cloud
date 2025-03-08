@@ -23,7 +23,7 @@ def parse_args():
     )
     parser.add_argument("--savedir_path", metavar="DIR", default="/workspace/weights/search/", help="savedire path")
     # minibatch
-    parser.add_argument("--num_epoch", type=int, default=300, help="number of total epochs to run (default: 300)")
+    parser.add_argument("--num_epoch", type=int, default=1000, help="number of total epochs to run (default: 1000)")
     parser.add_argument("--train_mini_batch", default=32, type=int, help="mini-batch size (default: 32)")
     parser.add_argument("--val_mini_batch", default=128, type=int, help="Validation mini-batch size (default: 128)")
     # random seed
@@ -31,6 +31,8 @@ def parse_args():
     # 学習率
     parser.add_argument("--lr", type=float, default=1e-4)
     parser.add_argument("--weight_decay", type=float, default=0.001)
+    # 潜在変数
+    parser.add_argument("--latent_num", type=float, default=1000)
     # option
     parser.add_argument("--wandb_project", type=str, default="demo")
     parser.add_argument("--wandb_name", type=str, default="demo1")
