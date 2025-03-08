@@ -74,7 +74,7 @@ def main(args):
         },
     )
 
-    model = Conv3dAutoencoder()
+    model = Conv3dAutoencoder(latent=args.latent_num)
     model.apply(weights_init)
     model.to(device)
     wandb.watch(model, log_freq=100)
