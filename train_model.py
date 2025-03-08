@@ -68,7 +68,7 @@ def train_model(model, criterion, optimizer, num_epochs, args, device, run):
                 wandb.log({"train loss": train_loss_num})
             else:
                 val_loss_list.append(val_loss_num)
-                wandb.log({"value loss": train_loss_num})
+                wandb.log({"value loss": val_loss_num})
             
         print("Epoch [{}/{}], Loss: {:.4f}".format(epoch + 1, num_epochs, val_loss_num))
 
